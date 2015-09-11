@@ -1,3 +1,11 @@
-# chuanli
-APAX web
-We are constructing a html5 web with angular, which performs a SPA represented by animation tweening.
+# APAX web
+
+## Install
+```shell
+npm install && bower install
+```
+
+## Run
+```shell
+grunt serve
+```
