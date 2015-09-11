@@ -1,0 +1,16 @@
+ion-view(tab-mouse-wheel)
+  ion-pane
+    ul.apxa-tab
+      li
+        a(href='#/tab/core-unit', ng-class='{"tab-curr": currCate == "core-unit"}')
+          | CORE UNITS
+      li
+        a(href='#/tab/press-center', ng-class='{"tab-curr": currCate == "press-center"}')
+          | PRESS CENTER
+      li
+        a(href='#/tab/contact-us', ng-class='{"tab-curr": currCate == "contact-us"}')
+          | CONTACT US
+      li
+        a(href='#/tab/recruitment', ng-class='{"tab-curr": currCate == "recruitment"}')
+          | RECRUITMENT
+    ion-nav-view(name='tab')

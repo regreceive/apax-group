@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+  <style>
+    html {width: 100%; height: 100%; background-color: #000}
+    body {margin: 0; padding: 0; height: 100%; overflow: hidden}
+    .rotate {
+      position: absolute;
+      transform-origin: center top 0;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    .incline {
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+      transform: rotateX(30deg) scale(1, 2);
+      transform-origin: 0 0 0;
+    }
+   .triangle {
+      width: 200px;
+      height: 200px;
+      background-image: linear-gradient(135deg, white -50%, transparent 35%);
+      transform: translate(100px) rotateZ(45deg);
+      transform-origin: 0 0 0;
+    }
+  </style>
+</head>
+<body>
+<div class="rotate">
+  <div class="incline">
+    <div class="triangle"></div>
+  </div>
+</div>
+</body>
+</html>

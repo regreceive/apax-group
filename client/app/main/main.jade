@@ -1,0 +1,15 @@
+ion-view
+  ion-pane
+    .main
+      .loading(ng-hide='loadPercent >= 100')
+        .loading-bar(ng-style='{width: loadPercent + "%"}')
+        .num {{ loadPercent }}%
+
+      .logo
+        a(ng-click='goToTab()' ng-style='{cursor: loadPercent >= 100 ? "pointer" : "auto"}')
+          img(src='assets/images/logo.png')
+        em
+          img(src='assets/images/slogan.png')
+
+      spotlight(triangle-color='white', incline-qty='2', incline-x='10deg', incline-width='0.6', incline-height='6', spotlight-z='-20deg', spotlight-x='0deg', spotlight-left='-180', spotlight-top='-260')
+      spotlight(triangle-color='white', incline-qty='1', incline-x='10deg', incline-width='0.6', incline-height='2', spotlight-z='-20deg', spotlight-x='0deg', spotlight-left='-180', spotlight-top='-260')

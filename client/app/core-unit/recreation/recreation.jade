@@ -1,0 +1,25 @@
+ion-view(cu-mouse-wheel)
+  ion-pane
+    .apax-cu
+      .gray.event EVENT
+      .gray.live LIVE
+      .gray.curr.recreation RECREATION
+      ul.dot
+        li
+          a(href='#/tab/core-unit/event')
+        li
+          a(href='#/tab/core-unit/live')
+        li(class='curr')
+          a(href='#/tab/core-unit/recreation')
+
+      .recreation
+        .accordion(ng-class='{"page2": page2}')
+          .context
+            img(src='assets/images/cu_recreation_text.png')
+            .link
+              a.video(href='#/video/xx.mp4') VIDEO
+              a.gallery(href='#/gallery/RECREATION－Discovery') GALLERY
+
+
+      // recreation
+      spotlight(triangle-color='white', incline-qty='3', incline-x='10deg', incline-width='6', incline-height='8', spotlight-z='130deg', spotlight-x='2deg', spotlight-left='450', spotlight-top='65')

@@ -1,0 +1,26 @@
+ion-view(pc-mouse-wheel)
+  ion-pane
+    .apax-pc.live
+      .gray.event EVENT
+      .gray.curr.live LIVE
+      .gray.recreation RECREATION
+      ul.dot
+        li
+          a(href='#/tab/press-center/event')
+        li(class='curr')
+          a(href='#/tab/press-center/live')
+        li
+          a(href='#/tab/press-center/recreation')
+
+      .annual
+        section(ng-repeat='data in datas', ng-style='{"animation-delay": ($index * 0.3 + 1) + "s"}')
+          .year {{ data.year }}
+          ul
+            li(ng-repeat='archive in data.archives')
+              p {{ archive.title }}
+              p
+                span.download(ng-click='leaveMsg(archive.url)') DOWNLOAD PDF
+
+
+      // live
+      spotlight(triangle-color='#a40ebb', incline-qty='3', incline-x='10deg', incline-width='3', incline-height='9', spotlight-z='-120deg', spotlight-x='0deg', spotlight-left='-400', spotlight-top='170', spotlight-opacity='0.8')

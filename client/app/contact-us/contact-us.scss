@@ -1,0 +1,155 @@
+.apax-concatus {
+  > .col-1 {
+    @include animated-init(1s, 0s);
+    @include position-to-center();
+    margin: -133px 0 0 -587px;
+    transform: rotate(-26.24deg);
+    img {
+      transform: rotate(26.24deg);
+    }
+  }
+  > .col-2 {
+    @include animated-init(1s, 0.3s);
+    @include position-to-center();
+    margin: -133px 0 0 -366px;
+    transform: rotate(-26.24deg);
+    img {
+      transform: rotate(26.24deg);
+    }
+  }
+  > .col-3 {
+    @include animated-init(1s, 0.8s);
+    @include position-to-center();
+    margin: -283px 0 0 -2px;
+    transform: rotate(26.24deg);
+    img {
+      transform: rotate(-26.24deg);
+    }
+  }
+  > .col-4 {
+    @include animated-init(1s, 1.1s);
+    @include position-to-center();
+    margin: -283px 0 0 168px;
+    transform: rotate(26.24deg);
+    img {
+      transform: rotate(-26.24deg);
+    }
+  }
+
+  > .sns {
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 50%;
+    margin: 330px auto 0;
+    width: 270px;
+    li {
+      display: inline-block;
+      width: 24px;
+      height: 21px;
+      margin: 0 15px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      a {
+        display: block;
+        height: 100%;
+      }
+    }
+    li:nth-child(1) {
+      @include animated-init(0.75s, 2.1s);
+      background-image: url(../assets/images/sns_sina.png);
+    }
+    li:nth-child(2) {
+      @include animated-init(0.75s, 2.3s);
+      background-image: url(../assets/images/sns_weixin.png);
+      cursor: pointer;
+      > .qrcode {
+        @include animated-init(0.5s, 0s, 0s);
+        position: absolute;
+        z-index: 1;
+        margin: -180px 0 0 -60px;
+      }
+      > .qrcode.ng-hide-remove {
+        animation-name: fadeInUp;
+      }
+      > .qrcode.ng-hide-add {
+        animation-name: fadeOutDown;
+      }
+    }
+    li:nth-child(3) {
+      @include animated-init(0.75s, 2.5s);
+      background-image: url(../assets/images/sns_fb.png);
+    }
+    li:nth-child(4) {
+      @include animated-init(0.75s, 2.7s);
+      background-image: url(../assets/images/sns_in.png);
+    }
+    li:nth-child(5) {
+      @include animated-init(0.75s, 2.9s);
+      background-image: url(../assets/images/sns_mail.png);
+    }
+    > .msg {
+      @include animated-init(0.75s, 3.4s);
+      text-align: center;
+      color: #626262;
+      font-size: 12px;
+      font-family: FuturaStd-Medium;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+[nav-view="active"] {
+  .apax-concatus {
+    > .col-1 {
+      animation-name: contactUsOneIn;
+    }
+    > .col-2 {
+      animation-name: contactUsTwoIn;
+    }
+    > .col-3 {
+      animation-name: contactUsThreeIn;
+    }
+    > .col-4 {
+      animation-name: contactUsFourIn;
+    }
+    > .sns {
+      li {
+        animation-name: bounceIn;
+      }
+      > .msg {
+        animation-name: zoomIn;
+      }
+    }
+  }
+}
+[nav-view="leaving"] {
+  .apax-concatus {
+    > .col-1 {
+      animation-name: contactUsOneOut;
+      animation-delay: 0s;
+    }
+    > .col-2 {
+      animation-name: contactUsTwoOut;
+      animation-delay: 0s;
+    }
+    > .col-3 {
+      animation-name: contactUsThreeOut;
+      animation-delay: 0s;
+    }
+    > .col-4 {
+      animation-name: contactUsFourOut;
+      animation-delay: 0s;
+    }
+    > .sns {
+      li {
+        animation-name: zoomOut;
+        animation-delay: 0s;
+      }
+      > .msg {
+        animation-name: zoomOut;
+        animation-delay: 0s;
+      }
+    }
+  }
+}

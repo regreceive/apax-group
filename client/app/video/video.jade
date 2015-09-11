@@ -1,0 +1,9 @@
+ion-view
+  ion-pane
+    .apax-video
+      section.ng-video-container
+        .close.ion-close-round(ng-click='return($event)')
+        section.video(apax-video)
+          video(autoplay)
+          .replay(ng-show='currentTime >= duration', ng-click='play()')
+            | REPLAY

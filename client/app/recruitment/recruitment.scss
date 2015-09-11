@@ -1,0 +1,121 @@
+.apax-recruit {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    > .image {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  > .pentagon {
+    @include animated-init(1s, 0s);
+    z-index: 6;
+    > .image {
+      background-image: url(../assets/images/cont_pentagon.png);
+    }
+  }
+  > .wantyou {
+    @include animated-init(5s, 4s);
+    z-index: 6;
+    > .image {
+      background-image: url(../assets/images/cont_wantyou.png);
+    }
+  }
+  > .slogan {
+    @include animated-init(6s, 6s);
+    z-index: 6;
+    > .image {
+      background-image: url(../assets/images/cont_slogan.png);
+    }
+  }
+  > .interact {
+    @include animated-init(3s, 6s);
+    width: 14.8%;
+    height: 2.2%;
+    left: 18.8%;
+    top: 40.7%;
+    background-image: url(../assets/images/cont_email.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 6;
+    > a {
+      height: 100%;
+      &.position {
+        float: left;
+        width: 30%;
+      }
+      &.email {
+        float: right;
+        width: 62.9%;
+      }
+    }
+  }
+  > .main-image {
+    @include animated-init(1s, 1s);
+    z-index: 5;
+    > .image {
+      background-image: url(../assets/images/cont_main_image.png);
+    }
+  }
+  > .parallelogram-1 {
+    @include animated-init(1s, 2s);
+    z-index: 4;
+    transform: rotate(28.95deg);
+    > .image {
+      background-image: url(../assets/images/cont_parallelogram_1.png);
+      transform: rotate(-28.95deg);
+    }
+  }
+  > .parallelogram-2 {
+    @include animated-init(1s, 2.5s);
+    z-index: 4;
+    transform: rotate(28.95deg);
+    > .image {
+      background-image: url(../assets/images/cont_parallelogram_2.png);
+      transform: rotate(-28.95deg);
+    }
+  }
+  > .trapezoid-1 {
+    @include animated-init(1s, 3s);
+    z-index: 2;
+    > .image {
+      background-image: url(../assets/images/cont_trapezoid_1.png);
+    }
+  }
+  > .trapezoid-2 {
+    @include animated-init(1s, 1.5s);
+    z-index: 3;
+    transform: rotate(28.95deg);
+    > .image {
+      background-image: url(../assets/images/cont_trapezoid_2.png);
+      transform: rotate(-28.95deg);
+    }
+  }
+
+}
+
+[nav-view="active"] {
+  .apax-recruit {
+    > .pentagon {
+      animation-name: rollIn;
+    }
+    > .wantyou, > .slogan, > .interact, > .main-image, > .parallelogram-1, > .parallelogram-2, > .trapezoid-1, > .trapezoid-2 {
+      animation-name: fadeIn;
+    }
+  }
+}
+[nav-view="leaving"] {
+  .apax-recruit {
+    > .pentagon, > .wantyou, > .slogan, > .interact,  > .main-image, > .parallelogram-1, > .parallelogram-2, > .trapezoid-1, > .trapezoid-2 {
+      animation-name: fadeOut;
+      animation-delay: 0s;
+    }
+  }
+}

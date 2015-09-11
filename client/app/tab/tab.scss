@@ -1,0 +1,17 @@
+ul.apxa-tab {
+  position: absolute;
+  z-index: 4;
+  left: 30px;
+  bottom: 30px;
+  > li {
+    > a {
+      color: #8e9091;
+      text-decoration: none;
+      font-family: FuturaStd-Medium;
+      font-size: 12px;
+    }
+    > .tab-curr, > a:hover {
+      color: #6d217a
+    }
+  }
+}

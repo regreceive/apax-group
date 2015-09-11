@@ -1,0 +1,340 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -180deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes logo-slideInUp {
+   from {
+     transform: translate3d(0, 1000px, 0);
+     visibility: visible;
+   }
+
+   100% {
+     transform: translate3d(0, 0, 0);
+   }
+ }
+
+@keyframes logo-slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 1000px, 0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes lightSpeedIn {
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes lightSpeedOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipOutY {
+  from {
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes perspectiveIn {
+  from {
+    transform: perspective(100px) translateZ(100px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contactUsOneIn {
+  from {
+    opacity: 0;
+    transform: rotate(-26.24deg) translate(0, -150px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contactUsTwoIn {
+  from {
+    opacity: 0;
+    transform: rotate(-26.24deg) translate(0, 150px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contactUsThreeIn {
+  from {
+    opacity: 0;
+    transform: rotate(26.24deg) translate(0, -150px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contactUsFourIn {
+  from {
+    opacity: 0;
+    transform: rotate(26.24deg) translate(0, 150px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contactUsOneOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-26.24deg) translate(0, -150px);
+  }
+}
+
+@keyframes contactUsTwoOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-26.24deg) translate(0, 150px);
+  }
+}
+
+@keyframes contactUsThreeOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(26.24deg) translate(0, -150px);
+  }
+}
+
+@keyframes contactUsFourOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(26.24deg) translate(0, 150px);
+  }
+}

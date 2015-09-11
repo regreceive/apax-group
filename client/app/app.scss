@@ -1,0 +1,137 @@
+/*
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+*/
+
+// ionic override
+$base-background-color: #000;
+$ionicons-font-path: "../assets/font";
+
+// Modals
+// -------------------------------
+
+$modal-bg-color:                  rgba(50, 50, 50, .9);
+$modal-backdrop-bg-active:        #000 !default;
+$modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
+
+$modal-inset-mode-break-point:    680px !default;  // @media min-width
+$modal-inset-mode-top:            25% !default;
+$modal-inset-mode-right:          22% !default;
+$modal-inset-mode-bottom:         0% !default;
+$modal-inset-mode-left:           42% !default;
+$modal-inset-mode-min-height:     240px !default;
+
+.modal {
+
+}
+
+@import 'ionic/scss/ionic';
+
+@font-face{
+  font-family: 'FuturaStd-Medium';
+  src: url('../assets/font/FuturaStd-Medium.otf');
+}
+@font-face{
+  font-family: 'FuturaStd-Heavy';
+  src: url('../assets/font/FuturaStd-Heavy.otf');
+}
+@font-face{
+  font-family: 'FuturaStd-Light';
+  src: url('../assets/font/FuturaStd-Light.otf');
+}
+/**
+ * App-wide Styles
+ */
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html, body{
+  height: 100%
+}
+
+body {
+  letter-spacing: 2px;
+  > div[io-nav-view] {
+    height: 100%;
+  }
+}
+
+a {
+  transition: color .5s linear 0s;
+  text-decoration: none;
+}
+// patch vertical transition to ionic
+// -------------------------------
+$vertical-transition-delay:           1s;   // a interval that allow spirits animate inversely when view leaving
+$ios-transition-duration:              500ms !default;
+$ios-transition-timing-function:       cubic-bezier(.36, .66, .04, 1) !default;
+$ios-transition-container-bg-color:    #000 !default;
+
+
+[nav-view-transition="vertical"] {
+
+  [nav-view="entering"],
+  [nav-view="leaving"] {
+    @include transition-delay($vertical-transition-delay);
+    @include transition-duration( $ios-transition-duration );
+    @include transition-timing-function( $ios-transition-timing-function );
+    -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+    transition-property: opacity, transform, box-shadow;
+  }
+
+  &[nav-view-direction="forward"],
+  &[nav-view-direction="back"] {
+    background-color: $ios-transition-container-bg-color;
+  }
+
+  [nav-view="active"],
+  &[nav-view-direction="forward"] [nav-view="entering"],
+  &[nav-view-direction="back"] [nav-view="leaving"] {
+    z-index: $z-index-view-above;
+  }
+
+  &[nav-view-direction="back"] [nav-view="entering"],
+  &[nav-view-direction="forward"] [nav-view="leaving"] {
+    z-index: $z-index-view-below;
+  }
+}
+
+@mixin position-to-center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+@mixin animated-init($animation-duration, $animation-delay, $vertical-delay: $vertical-transition-delay) {
+  animation-duration: $animation-duration;
+  animation-delay: $vertical-delay + .3s + $animation-delay;
+  animation-fill-mode: both;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'animate.scss';
+@import 'contact-us/contact-us.scss';
+@import 'core-unit/core-unit.scss';
+@import 'core-unit/event/event.scss';
+@import 'core-unit/live/live.scss';
+@import 'core-unit/recreation/recreation.scss';
+@import 'directive/spotlight.scss';
+@import 'gallery/gallery.scss';
+@import 'main/main.scss';
+@import 'press-center/event/event.scss';
+@import 'press-center/live/live.scss';
+@import 'press-center/press-center.scss';
+@import 'press-center/recreation/recreation.scss';
+@import 'recruitment/recruitment.scss';
+@import 'tab/tab.scss';
+@import 'video/video.scss';
+@import 'modal/modal.scss';
+// endinjector

@@ -1,0 +1,95 @@
+.apax-pc {
+  &.event {
+    background-image: url(../assets/images/bg_press_center_event.jpg);
+  }
+  > ul.dot {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(145, 145, 145);
+      margin: 10px;
+      cursor: pointer;
+      &.curr{
+        background-color: #813a8f;
+      }
+      a {
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+  > .annual {
+    @include animated-init(1s, 1.5s);
+    @include position-to-center();
+    z-index: 2;
+    margin: -202px 0 0 -102px;
+    font-family: FuturaStd-Medium;
+
+    section {
+      @include animated-init(1s, 0s);
+      margin: 0 0 20px;
+      > .year {
+        color: #7b3886;
+        font-size: 25px;
+        letter-spacing: 0.5px;
+      }
+      ul {
+        margin-top: 23px;
+        li {
+          display: inline-block;
+          width: min-content;
+          min-width: 160px;
+          margin: 0 35px 0 0;
+          vertical-align: top;
+
+          p:first-child {
+            margin: 0 0 5px;
+            color: #fff;
+            font-size: 23px;
+            line-height: 27px;
+          }
+          .download {
+            padding-left: 5px;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            color: #999;
+            cursor: pointer;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+            transition: .5s color;
+
+            &:hover {
+              color: #7e3888;
+            }
+          }
+          .download:before {
+            content: '';
+            width: 2px;
+            height: 25px;
+            margin: -5px 0 0 -1px;
+            position: absolute;
+            background-color: #aaa;
+            transform: rotate(45deg);
+            transition: .5s color;
+          }
+        }
+      }
+    }
+  }
+}
+
+[nav-view="active"] {
+  .apax-pc > .annual > section {
+    animation-name: lightSpeedIn;
+  }
+}
+[nav-view="leaving"] {
+  .apax-pc > .annual > section {
+    animation-name: lightSpeedOut;
+    animation-delay: 0s;
+  }
+}

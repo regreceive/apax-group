@@ -1,0 +1,34 @@
+ion-view(cu-mouse-wheel)
+  ion-pane
+    .apax-cu
+      .gray.curr.event EVENT
+      .gray.live LIVE
+      .gray.recreation RECREATION
+      ul.dot
+        li(class='curr')
+          a(href='#/tab/core-unit/event')
+        li
+          a(href='#/tab/core-unit/live')
+        li
+          a(href='#/tab/core-unit/recreation')
+
+      .accordion(ng-class='{"page2": page2}')
+        .context
+          img(src='assets/images/cu_event_text.png')
+          .link
+            a.video(href='#/video/xx.mp4') VIDEO
+            a.gallery(href='#/gallery/EVENT－APAX') GALLERY
+
+        .context
+          img(src='assets/images/cu_event_text2.png')
+          .link
+            a.video(href='#/video/xx.mp4') VIDEO
+            a.gallery(href='#/gallery/EVENT－APAX-Production') GALLERY
+        .copyright
+          img(src='assets/images/cu-event-copyright-1.png', ng-click='page2 = false', ng-style='{cursor: page2 ? "pointer" : "default"}')
+        .copyright
+          img(src='assets/images/cu-event-copyright-2.png', ng-click='page2 = true', ng-style='{cursor: page2 ? "default" : "pointer"}')
+
+
+      // event
+      spotlight(triangle-color='white', incline-qty='3', incline-x='10deg', incline-width='3.6', incline-height='7', spotlight-z='0deg', spotlight-x='0deg', spotlight-left='-165', spotlight-top='-270')

@@ -1,0 +1,132 @@
+.apax-cu {
+  > ul.dot {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(145, 145, 145);
+      margin: 10px;
+      cursor: pointer;
+      &.curr{
+        background-color: #813a8f;
+      }
+      a {
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+  .accordion {
+    @include animated-init(1s, 0s);
+    @include position-to-center();
+    z-index: 2;
+    margin: -292px 0 0 -100px;
+    width: 580px;
+    height: 615px;
+
+    > .context {
+      position: absolute;
+      top: 110px;
+      width: 580px;
+      color: #929496;
+      font-family: arial;
+      font-size: 22px;
+      line-height: 26px;
+      letter-spacing: 0;
+      text-align: justify;
+      strong {
+        font-weight: normal;
+        color: #fff;
+      }
+      strong.not-justify {
+        font-size: 21px;
+      }
+      > .link {
+        position: absolute;
+        right: 0;
+        margin-top: 3px;
+        font-family: FuturaStd-Medium;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        > a {
+          color: #666565;
+        }
+        > a:hover {
+          color: #7e3888;
+        }
+        > a:before {
+          content: '';
+          width: 2px;
+          height: 20px;
+          position: absolute;
+          background-color: #666565;
+          transform: rotate(45deg);
+        }
+        > a.video {
+          @include animated-init(1s, .5s);
+        }
+        > a.gallery {
+          @include animated-init(1s, 1s);
+          padding-left: 15px;
+        }
+      }
+    }
+
+    > .context:first-child {
+      opacity: 1;
+      transition: opacity .5s ease-out;
+    }
+    > .context:nth-child(2) {
+      opacity: 0;
+      transition: opacity .5s ease-out;
+    }
+
+    > .copyright {
+      @include animated-init(1s, 2s);
+      position: absolute;
+      bottom: 0;
+    }
+    > .copyright:nth-child(3) {
+      @include animated-init(1s, 1.5s);
+      transition: top .5s ease-out;
+      top: 570px;
+    }
+  }
+
+  // page switch
+  .accordion.page2 {
+    > .copyright:nth-child(3) {
+      top: 0;
+    }
+    .context:first-child {
+      opacity: 0;
+    }
+    .context:nth-child(2) {
+      opacity: 1;
+    }
+  }
+}
+
+[nav-view="active"] {
+  .accordion {
+    animation-name: lightSpeedIn;
+    animation-timing-function: ease-out;
+    .video, .gallery, > .copyright {
+      animation-name: flipInY;
+    }
+  }
+}
+[nav-view="leaving"] {
+  .accordion {
+    animation-delay: 0s;
+    animation-name: lightSpeedOut;
+    animation-timing-function: ease-in;
+    .video, .gallery, > .copyright {
+      animation-name: flipOutY;
+    }
+  }
+}

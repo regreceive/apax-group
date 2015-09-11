@@ -1,0 +1,63 @@
+.main {
+  height: 100%;
+  position: relative;
+  > .loading {
+    height: 12px;
+    display: block;
+    overflow: hidden;
+    > .loading-bar {
+      width: 0;
+      height: 10px;
+      background-color: #5b1a68;
+      float: left;
+    }
+    > .num {
+      float: left;
+      color: #919395;
+      font-size: 12px;
+      line-height: 10px;
+      font-family: FuturaStd-Medium;
+    }
+  }
+
+  > .logo {
+    @include animated-init(2s, 1s);
+    @include position-to-center();
+    margin-left: -147.5px;
+    margin-top: -50px;
+    z-index: 2;
+    > a {
+      display: block;
+    }
+    > em {
+      @include animated-init(10s, 3s);
+      display: block;
+      height: 18px;
+    }
+  }
+}
+
+
+[nav-view="active"] {
+  .main {
+    > .logo {
+      animation-name: logo-slideInUp;
+      > em {
+        animation-name: fadeIn;
+      }
+    }
+  }
+}
+[nav-view="leaving"] {
+  .main {
+    > .logo {
+      animation-delay: 0s;
+      animation-name: logo-slideOutDown;
+      > em {
+        animation-delay: 0s;
+        animation-name: fadeOut;
+      }
+    }
+  }
+}
+

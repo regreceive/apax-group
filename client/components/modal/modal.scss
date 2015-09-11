@@ -1,0 +1,52 @@
+.register {
+  padding-top: 65px;
+  background-color: transparent;
+  font-family: FuturaStd-Medium, 黑体;
+  > .close {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  > .item {
+    padding: 6px 27px 33px 31px;
+    background-color: transparent;
+    border-width: 0;
+    > .input-label {
+      width: 26%;
+      color: #fff;
+      font-size: 19px;
+    }
+    > input {
+      height: 30px;
+      letter-spacing: 2px;
+      border: 2px solid #d0d0cf;
+      color: #ffffff;
+      text-align: right;
+      padding: 0 20px;
+    }
+    > .submit {
+      float: right;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #666565;
+      cursor: pointer;
+      transition: 0.5s color;
+      &.submit:hover {
+        color: #7e3888;
+      }
+    }
+    > .submit:before {
+      content: '';
+      width: 2px;
+      height: 25px;
+      position: absolute;
+      top: 0;
+      background-color: #666565;
+      transform: rotate(45deg);
+    }
+  }
+}

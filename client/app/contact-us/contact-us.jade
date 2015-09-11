@@ -1,0 +1,32 @@
+ion-view
+  ion-pane
+    .apax-concatus
+      .col-1
+        img(src='assets/images/division_col_1.png')
+      .col-2
+        img(src='assets/images/division_col_2.png')
+      .col-3
+        img(src='assets/images/division_col_3.png')
+      .col-4
+        img(src='assets/images/division_col_4.png')
+
+      section.sns
+        ul
+          li
+            a(href='http://weibo.com/apaxgroupsh', target='_blank')
+          li(ng-mouseenter='rushIn()', ng-mouseleave='lazyOut()')
+            img.qrcode(src='assets/images/qr_code.png', ng-show='showQRCode')
+          li
+            a(href='https://www.facebook.com/APAXGROUP', target='_blank')
+          li
+            a(href='https://instagram.com/apax_2015/', target='_blank')
+          li
+            a(href='mailto:info@apaxgroup.com')
+        .msg FOLLOW US TO KNOW WHAT'S NEW
+
+
+      // contact us
+      spotlight(triangle-color='white', incline-qty='2', incline-x='10deg', incline-width='1.2', incline-height='6', spotlight-z='-20deg', spotlight-x='0deg', spotlight-left='-430', spotlight-top='-270')
+      spotlight(triangle-color='white', incline-qty='1', incline-x='10deg', incline-width='1', incline-height='2', spotlight-z='-20deg', spotlight-x='0deg', spotlight-left='-430', spotlight-top='-270')
+
+      spotlight(triangle-color='white', incline-qty='2', incline-x='10deg', incline-width='1', incline-height='6', spotlight-z='-140deg', spotlight-x='0deg', spotlight-left='90', spotlight-top='200')
